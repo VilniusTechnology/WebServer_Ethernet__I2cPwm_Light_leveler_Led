@@ -68,7 +68,7 @@ void setup() {
   ether.printIp("IP:  ", ether.myip);
 
 //  // Setup sensor for light level monitoring
-//  I2c.begin();
+  I2c.begin();
 //  
 //  I2c.write(0x4A, 0x01, 0x0);
 //  I2c.write(0x4A, 0x02, 0x00);
@@ -102,9 +102,6 @@ void loop() {
   
   I2c.read(0x4A, 0x3, 6);
   sensVal = I2c.receive();
-  
-//  Serial.print(F("---- CURRENT LIGHT LEVEL SENSOR = "));
-//  Serial.println(sensVal);
 }
 
 void execute_RGB_program(int state, int mode, int ww, int cw, int red, int green, int blue) {
